@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1d2330;
+}
+button, select, input { font: inherit; }
+[hidden] { display: none !important; }
+
+.topbar { background: #fff; border-bottom: 1px solid #d5d9e0; padding: 12px 24px; }
+.topbar h1 { margin: 0; font-size: 1.3rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 260px;
+  gap: 24px;
+  padding: 24px;
+  align-items: start;
+}
+
+.panel { background: #fff; border: 1px solid #d5d9e0; border-radius: 10px; padding: 16px; }
+.panel h2 { font-size: 1.05rem; margin: 0 0 8px; }
+.panel h2:not(:first-child) { margin-top: 20px; }
+label { display: block; margin: 10px 0 4px; font-weight: 600; font-size: 0.9rem; }
+select, input { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #c3c9d4; border-radius: 6px; }
+button { padding: 8px 14px; border: 1px solid #c3c9d4; border-radius: 6px; background: #fff; cursor: pointer; }
+button:hover { background: #eef0f3; }
+.primaer { background: #2456c7; border-color: #2456c7; color: #fff; }
+.primaer:hover { background: #1b45a3; }
+#nytSpilKnap { width: 100%; margin-top: 16px; }
+.knapper { display: flex; gap: 8px; margin-top: 12px; }
+.fejl { color: #c62828; font-weight: 600; }
+.hint { color: #5b6475; font-size: 0.85rem; }
+
+/* Spillet */
+.spilomraade { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.statuslinje { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.display { background: #1d2330; color: #ffdf5d; font: 700 1.2rem ui-monospace, Consolas, monospace; padding: 6px 12px; border-radius: 6px; }
+.nedtaelling { color: #9be7ff; }
+#smiley { font-size: 1.6rem; width: 50px; height: 50px; border-radius: 50%; }
+
+.braet { display: grid; padding: 6px; background: #8d95a3; border-radius: 6px; max-width: 100%; overflow-x: auto; }
+.celle {
+  padding: 0;
+  border: 3px solid;
+  border-color: #e3e7ee #8d95a3 #8d95a3 #e3e7ee;
+  border-radius: 0;
+  background: #c3c9d4;
+  font-weight: 800;
+}
+.celle:hover { background: #d3d8e1; }
+.celle.aaben { background: #eef0f3; border: 1px solid #c9ced8; cursor: default; }
+.celle.mine { background: #f6c4c4; }
+.n1 { color: #1240c8; } .n2 { color: #1b7a1b; } .n3 { color: #c62828; } .n4 { color: #13206b; }
+.n5 { color: #7a1010; } .n6 { color: #0b6e6e; } .n7 { color: #1d2330; } .n8 { color: #4f5562; }
+.besked { font-weight: 600; min-height: 1.4em; text-align: center; }
+
+/* Rekorder */
+#rekordListe { padding-left: 22px; margin: 0; }
+#rekordListe li { margin-bottom: 6px; }
+#rekordListe span { display: block; color: #5b6475; font-size: 0.85rem; }
+
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; }
+  .spilomraade { order: -1; }
+}

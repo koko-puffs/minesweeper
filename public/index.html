@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Minesweeper</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/board.js" defer></script>
+	<script src="js/api.js" defer></script>
+	<script src="js/main.js" defer></script>
+</head>
+
+<body>
+	<header class="topbar">
+		<h1>💣 Minesweeper</h1>
+	</header>
+
+	<main class="layout">
+		<!-- Indstillinger -->
+		<section class="panel">
+			<h2>Indstillinger</h2>
+			<label for="niveau">Sværhedsgrad</label>
+			<select id="niveau">
+				<option value="beginner">Let (9×9)</option>
+				<option value="intermediate">Mellem (16×16)</option>
+				<option value="expert">Svær (16×30)</option>
+			</select>
+			<label for="tidsgraense">Tidsgrænse</label>
+			<select id="tidsgraense">
+				<option value="0">Ingen</option>
+				<option value="60">1 minut</option>
+				<option value="120">2 minutter</option>
+				<option value="300">5 minutter</option>
+			</select>
+			<button id="nytSpilKnap" class="primaer">Nyt spil</button>
+		</section>
+
+		<!-- Spillet -->
+		<section class="spilomraade" id="spilomraade">
+			<div class="statuslinje">
+				<div class="display" title="Miner tilbage">💣 <span id="mineTaeller">10</span></div>
+				<button id="smiley" title="Nyt spil">🙂</button>
+				<div class="display" title="Tid brugt">⏱ <span id="tid">0,0</span></div>
+				<div class="display nedtaelling" id="nedtaellingBoks" title="Tid tilbage" hidden>⏳ <span id="nedtaelling"></span></div>
+			</div>
+			<div id="braet" class="braet"></div>
+			<p id="besked" class="besked"></p>
+			<p class="hint">Venstreklik afdækker · Højreklik sætter flag 🚩 · Første klik er altid sikkert</p>
+		</section>
+
+		<!-- Login og rekorder -->
+		<section class="panel">
+			<h2>Spiller</h2>
+			<form id="loginForm">
+				<label for="brugernavn">Brugernavn</label>
+				<input id="brugernavn" autocomplete="username" maxlength="16">
+				<label for="kodeord">Kodeord</label>
+				<input id="kodeord" type="password" autocomplete="current-password">
+				<div class="knapper">
+					<button type="submit" class="primaer">Log ind</button>
+					<button type="button" id="opretKnap">Opret bruger</button>
+				</div>
+				<p id="loginFejl" class="fejl"></p>
+			</form>
+			<div id="loggetInd" hidden>
+				<p>Logget ind som <strong id="brugerNavn"></strong></p>
+				<button id="logUdKnap">Log ud</button>
+			</div>
+
+			<h2>Dine 3 bedste tider – <span id="rekordNiveau">Let</span></h2>
+			<ol id="rekordListe"></ol>
+			<p id="rekordInfo" class="hint"></p>
+		</section>
+	</main>
+</body>
+
+</html>
